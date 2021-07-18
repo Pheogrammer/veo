@@ -31,3 +31,4 @@ Route::POST('saveprofile','HomeController@saveprofile')->name('saveprofile')->mi
 
 Route::get('messages', 'ChatsController@fetchMessages')->middleware('auth');
 Route::post('messages', 'ChatsController@sendMessage')->middleware('auth');
+Route::get('chat','HomeController@chat')->name('chat')->middleware('auth');
