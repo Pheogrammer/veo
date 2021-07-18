@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 18, 2021 at 04:40 PM
+-- Generation Time: Jul 18, 2021 at 08:37 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.3.22
 
@@ -72,6 +72,33 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `projects`
+--
+
+CREATE TABLE `projects` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `project_title` text NOT NULL,
+  `project_description` text NOT NULL,
+  `location` text NOT NULL,
+  `area_size` text NOT NULL,
+  `image` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `projects`
+--
+
+INSERT INTO `projects` (`id`, `user_id`, `project_title`, `project_description`, `location`, `area_size`, `image`, `created_at`, `updated_at`) VALUES
+(1, 1, 'yooh', 'watsup', 'kijitonyama', '23', '21-07-181626631544-1.png', '2021-07-18 15:05:44', '2021-07-18 15:05:44'),
+(2, 1, 'yooh again', 'watsup', 'kijitonyama', '23', '21-07-181626631579-1.png', '2021-07-18 15:06:19', '2021-07-18 15:06:19'),
+(3, 1, 'yooh again again', 'watsup', 'kijitonyama', '23', '21-07-181626631614-1.png', '2021-07-18 15:06:54', '2021-07-18 15:06:54');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -126,6 +153,12 @@ ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
+-- Indexes for table `projects`
+--
+ALTER TABLE `projects`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -147,6 +180,12 @@ ALTER TABLE `failed_jobs`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `projects`
+--
+ALTER TABLE `projects`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
