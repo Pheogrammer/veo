@@ -101,32 +101,22 @@
                         </div><!-- az-img-user -->
                         <h6> {{ Auth::user()->name }}</h6>
                     </div><!-- az-header-profile -->
+
+
+                    <a href="{{route('finalize')}}" class="dropdown-item"><i class="typcn typcn-user-outline"></i> My Profile</a>
                     @guest
 
-                @else
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    @else
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();">
+                     {{ __('Sign out') }}
+                 </a>
 
-                        </a>
-
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                        </div>
-                    </li>
-                @endguest
-                    <a href="#" class="dropdown-item"><i class="typcn typcn-user-outline"></i> My Profile</a>
-                    <a href="#" class="dropdown-item"><i class="typcn typcn-edit"></i> Edit Profile</a>
-                    <a href="#" class="dropdown-item"><i class="typcn typcn-time"></i> Activity Logs</a>
-                    <a href="#" class="dropdown-item"><i class="typcn typcn-cog-outline"></i> Account Settings</a>
-                    <a href="page-signin.html" class="dropdown-item"><i class="typcn typcn-power-outline"></i> Sign Out</a>
+                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                     @csrf
+                 </form>
+                 @endguest
                 </div><!-- dropdown-menu -->
             </div>
         </div><!-- az-header-right -->

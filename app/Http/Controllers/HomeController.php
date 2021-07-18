@@ -88,4 +88,22 @@ class HomeController extends Controller
         $datas = project::where('id',$id)->first();
         return view('readpost',['datas'=>$datas]);
     }
+
+    public function saveprofile(Request $request)
+    {
+        $datas = User::where('id',auth()->user()->id)->first();
+        $datas->name = $request['firstname'];
+        $datas->DOB = $request['dob'];
+        $datas->gender = $request['gender'];
+        $datas->email = $request['email'];
+        $datas->phone_number = $request['phone_number'];
+        $datas->phone_number2 = $request['phone_number2'];
+        $datas->country = $request['country'];
+
+        $datas->district = $request['district'];
+        $datas->street = $request['street'];
+        $datas->save();
+
+        return redirect()->route('home');
+    }
 }

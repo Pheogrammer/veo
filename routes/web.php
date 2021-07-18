@@ -27,3 +27,7 @@ Route::get('newpost','HomeController@newpost')->name('newpost')->middleware('aut
 Route::POST('savepost','HomeController@savepost')->name('savepost')->middleware('auth');
 
 Route::get('readpost/{id}','HomeController@readpost')->name('readpost')->middleware('auth');
+Route::POST('saveprofile','HomeController@saveprofile')->name('saveprofile')->middleware('auth');
+
+Route::get('messages', 'ChatsController@fetchMessages')->middleware('auth');
+Route::post('messages', 'ChatsController@sendMessage')->middleware('auth');
