@@ -31,11 +31,13 @@
         <div>
 
             <img src="{{asset('app1/logo.png')}}">
-            <h5>Responsive Modern Dashboard &amp; Admin Template</h5>
-            <p>We are excited to launch our new company and product Azia. After being featured in too many magazines to
-                mention and having created an online stir, we know that BootstrapDash is going to be big. We also hope
-                to win Startup Fictional Business of the Year this year.</p>
-            <p>Browse our site and see for yourself why you need Azia.</p>
+            <br>
+            <p>Welcome to Farm Social Network</p>
+{{--            <h5>Responsive Modern Dashboard &amp; Admin Template</h5>--}}
+{{--            <p>We are excited to launch our new company and product Azia. After being featured in too many magazines to--}}
+{{--                mention and having created an online stir, we know that BootstrapDash is going to be big. We also hope--}}
+{{--                to win Startup Fictional Business of the Year this year.</p>--}}
+{{--            <p>Browse our site and see for yourself why you need Azia.</p>--}}
             <a href="index.html" class="btn btn-outline-success">Learn More</a>
         </div>
     </div><!-- az-column-signup-left -->

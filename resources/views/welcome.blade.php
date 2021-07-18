@@ -36,7 +36,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<div class="w3_agileits_banner_main_grid">
 				<div class="w3_agile_logo">
-					<h1><a href="index.html"><span>G</span>erminate<i>Grow healthy products</i></a></h1>
+					<h1><a href="#"><span>G</span>erminate<i>Grow healthy products</i></a></h1>
 				</div>
 				<div class="agile_social_icons_banner">
 					<ul class="agileits_social_list">
@@ -93,8 +93,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="w3_banner_info">
 				<div class="w3_banner_info_grid">
 					<h3 class="test">I'm Planting A Tree To Teach Me To Gather Strength From My Deepest Roots</h3>
-					<p>Aenean congue vitae mauris sed tristique. Mauris quis nulla at sapien blandit
-						sollicitudin. Nunc tortor lorem, viverra sed diam ut, blandit efficitur leo.</p>
+					<p>The system to help extension officer, and farmer to meet and instant help, free without any cost.</p>
 					<ul>
 						<li><a href="contact.html" class="w3l_contact">Contact Us</a></li>
 						<li><a href="#" class="w3ls_more" data-toggle="modal" data-target="#myModal">Read More</a></li>
@@ -146,7 +145,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="col-xs-8 wthree_banner_bottom_grid_right">
 						<h4>Free Consultation</h4>
-						<p>Morbi viverra lacus commodo felis semper, eu iaculis lectus feugiat.</p>
+						<p>Free consultation, chat with extension officer anytime, with our system</p>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
@@ -162,7 +161,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="col-xs-8 wthree_banner_bottom_grid_right">
 						<h4>Certified Products</h4>
-						<p>Morbi viverra lacus commodo felis semper, eu iaculis lectus feugiat.</p>
+						<p>Based on research from research institutions in Tanzania.</p>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
@@ -178,7 +177,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="col-xs-8 wthree_banner_bottom_grid_right">
 						<h4>Free Helpline</h4>
-						<p>Morbi viverra lacus commodo felis semper, eu iaculis lectus feugiat.</p>
+						<p>Free chat, free help, extension officer waiting for you.</p>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
@@ -190,11 +189,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- welcome -->
 	<div class="welcome">
 		<div class="container">
-			<h3 class="agileits_w3layouts_head">Welcome to our <span>Plantation</span></h3>
+			<h3 class="agileits_w3layouts_head">Welcome to our <span>Articles</span></h3>
 			<div class="w3_agile_image">
 				<img src="{{asset('app1/images/1.png')}}" alt=" " class="img-responsive" />
 			</div>
-			<p class="agile_para">Morbi viverra lacus commodo felis semper, eu iaculis lectus nulla at sapien blandit sollicitudin.</p>
+			<p class="agile_para">Get farming tips from Extension officers via articles.</p>
 		</div>
 		<div class="mis-stage w3_agileits_welcome_grids">
 			<!-- The element to select and apply miSlider to - the class is optional -->
@@ -242,9 +241,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- welcome-bottom -->
 	<div id="welcome_bottom" class="welcome-bottom">
 		<div class="col-md-6 wthree_welcome_bottom_left">
-			<h3>we work hard and make our country <span>greenery</span></h3>
-			<p>Nullam pretium euismod orci ac porta. Interdum et malesuada fames ac ante
-				ipsum primis in faucibus. Donec at scelerisque dolor, vel placerat mi.</p>
+			<h3>we work hard and make our country <span>develop</span></h3>
+			<p>Extension officers in your hand, increase productivity  by modern farming techniques.</p>
 			<div class="col-md-6 wthree_welcome_bottom_left_grid">
 				<div class="w3l_social_icon_gridl">
 					<img src="{{asset('app1/images/8.png')}}" alt=" " class="img-responsive" />
@@ -382,7 +380,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="w3_agile_image">
 				<img src="{{asset('app1/images/12.png')}}" alt=" " class="img-responsive">
 			</div>
-			<p class="agile_para agileits_para">Morbi viverra lacus commodo felis semper, eu iaculis lectus nulla at sapien blandit sollicitudin.</p>
+			<p class="agile_para agileits_para">Be updated and subscribe to our newsletter.</p>
 			<div class="w3ls_news_grids w3ls_newsletter_grids">
 				<form action="#" method="post">
 					<input name="Your Name" placeholder="Your Name" type="text" required="">
@@ -399,13 +397,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="w3agile_footer_grids">
 				<div class="col-md-3 agileinfo_footer_grid">
 					<div class="agileits_w3layouts_footer_logo">
-						<h2><a href="index.html"><span>G</span>erminate<i>Grow healthy products</i></a></h2>
+						<h2><a href="#"><span>G</span>erminate<i>Grow healthy products</i></a></h2>
 					</div>
 				</div>
 				<div class="col-md-4 agileinfo_footer_grid">
 					<h3>Contact Info</h3>
-					<h4>Call Us <span>+1234 567 891</span></h4>
-					<p>My Company, 875 Jewel Road <span>8907 Ukraine.</span></p>
+					<h4>Call Us <span>+2556567 8891</span></h4>
+					<p>Posta ifm <span>Dar es salaam Tanzania.</span></p>
 					<ul class="agileits_social_list">
 						<li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 						<li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
@@ -443,7 +441,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<div class="w3_agileits_footer_copy">
 			<div class="container">
-				<p>© 2017 Germinate. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts.</a></p>
+				<p>© 2021 Bcs 3. All rights reserved | Design by Assignment</p>
 			</div>
 		</div>
 	</div>
