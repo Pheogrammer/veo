@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 18, 2021 at 08:37 PM
+-- Generation Time: Jul 18, 2021 at 10:56 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.3.22
 
@@ -39,6 +39,52 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `jobs`
+--
+
+CREATE TABLE `jobs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `queue` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `attempts` tinyint(3) UNSIGNED NOT NULL,
+  `reserved_at` int(10) UNSIGNED DEFAULT NULL,
+  `available_at` int(10) UNSIGNED NOT NULL,
+  `created_at` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `messages`
+--
+
+CREATE TABLE `messages` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`id`, `user_id`, `message`, `created_at`, `updated_at`) VALUES
+(1, 1, 'juma', '2021-07-18 17:21:13', '2021-07-18 17:21:13'),
+(2, 2, 'oya', '2021-07-18 17:21:58', '2021-07-18 17:21:58'),
+(3, 1, 'oya', '2021-07-18 17:22:26', '2021-07-18 17:22:26'),
+(4, 1, 'yooh', '2021-07-18 17:22:33', '2021-07-18 17:22:33'),
+(5, 1, 'nambie', '2021-07-18 17:28:04', '2021-07-18 17:28:04'),
+(6, 1, 'mambo vp man', '2021-07-18 17:28:16', '2021-07-18 17:28:16'),
+(7, 2, 'vp man', '2021-07-18 17:29:32', '2021-07-18 17:29:32'),
+(8, 1, 'fresh', '2021-07-18 17:29:47', '2021-07-18 17:29:47'),
+(9, 1, 'yo', '2021-07-18 17:39:57', '2021-07-18 17:39:57'),
+(10, 2, 'we shogha', '2021-07-18 17:55:31', '2021-07-18 17:55:31');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -55,7 +101,9 @@ CREATE TABLE `migrations` (
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
 (2, '2014_10_12_100000_create_password_resets_table', 1),
-(3, '2019_08_19_000000_create_failed_jobs_table', 1);
+(3, '2019_08_19_000000_create_failed_jobs_table', 1),
+(4, '2017_02_11_202057_create_messages_table', 2),
+(5, '2017_02_11_223846_create_jobs_table', 2);
 
 -- --------------------------------------------------------
 
@@ -127,7 +175,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `DOB`, `gender`, `phone_number`, `phone_number2`, `country`, `region`, `district`, `street`, `email_notification`) VALUES
-(1, 'Alfeo Raymond', 'ngelime07@gmail.com', NULL, '$2y$10$5Xsv8eScYO7mNIE4hae05u/LUjVas39UOgNoQ6X13uiZyzY23CWza', NULL, '2021-07-18 10:43:20', '2021-07-18 10:43:20', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(1, 'Alfeo Raymond', 'ngelime07@gmail.com', NULL, '$2y$10$5Xsv8eScYO7mNIE4hae05u/LUjVas39UOgNoQ6X13uiZyzY23CWza', NULL, '2021-07-18 10:43:20', '2021-07-18 16:50:22', '2021-07-07', 'Male', '2323233233', '2332323233', 'qwerty', 'qwerty1', 'qwerty12', 'qwerty123', NULL),
 (2, 'Juma Ashmed', 'pheogrammer@gmail.com', NULL, '$2y$10$9K8hyInXYRKFxpAY0FgW/eeni/b2YlGHn7vHVqOhjAdwBQdBiLfo6', NULL, '2021-07-18 10:57:06', '2021-07-18 10:57:06', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 --
@@ -138,6 +186,19 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 -- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `jobs`
+--
+ALTER TABLE `jobs`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `jobs_queue_reserved_at_index` (`queue`,`reserved_at`);
+
+--
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -176,10 +237,22 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `jobs`
+--
+ALTER TABLE `jobs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `projects`
