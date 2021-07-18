@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\log;
 use App\project;
 use App\User;
 use Illuminate\Support\Facades\Auth;
@@ -32,17 +32,35 @@ class HomeController extends Controller
     public function index()
     {
         $data = project::get();
+
+        $log = new log();
+        $log->user_id = auth()->user()->id;
+        $log->activity = 'Accessed a system';
+        $log->save();
+
         return view('home',['projects'=>$data]);
+
+
     }
 
     public function finalize()
     {
         return view('finalize');
+
+        $log = new log();
+        $log->user_id = auth()->user()->id;
+        $log->activity = 'Accessed a profile changes page';
+        $log->save();
     }
 
     public function newpost()
     {
         return view('newpost');
+
+        $log = new log();
+        $log->user_id = auth()->user()->id;
+        $log->activity = 'Accessed a write post page';
+        $log->save();
     }
 
     public function savepost(Request $request)
@@ -84,12 +102,21 @@ class HomeController extends Controller
         $datas->area_size = $request['area'];
         $datas->save();
 
+        $log = new log();
+        $log->user_id = auth()->user()->id;
+        $log->activity = 'Wrote and saved a post';
+        $log->save();
+
         return redirect()->route('home')->withErrors(['message'=>'Post Sent Successfully']);
     }
 
     public function readpost($id)
     {
         $datas = project::where('id',$id)->first();
+        $log = new log();
+        $log->user_id = auth()->user()->id;
+        $log->activity = 'read a post '.$id;
+        $log->save();
         return view('readpost',['datas'=>$datas]);
     }
 
@@ -108,6 +135,11 @@ class HomeController extends Controller
         $datas->street = $request['street'];
         $datas->save();
 
+        $log = new log();
+        $log->user_id = auth()->user()->id;
+        $log->activity = 'Saved profile changes';
+        $log->save();
+
         return redirect()->route('home');
     }
       /**
@@ -118,6 +150,11 @@ class HomeController extends Controller
     public function chat()
     {
         return view('chat');
+
+        $log = new log();
+        $log->user_id = auth()->user()->id;
+        $log->activity = 'Viewed profile';
+        $log->save();
     }
 
     /**
@@ -139,10 +176,17 @@ class HomeController extends Controller
     public function sendMessage(Request $request)
     {
         $user = Auth::user();
+        
+        $log = new log();
+        $log->user_id = auth()->user()->id;
+        $log->activity = 'Sent a message in a system';
+        $log->save();
 
         $message = $user->messages()->create([
             'message' => $request->input('message')
         ]);
+
+
 
         broadcast(new MessageSent($user, $message))->toOthers();
 
