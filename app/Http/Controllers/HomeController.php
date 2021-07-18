@@ -176,17 +176,10 @@ class HomeController extends Controller
     public function sendMessage(Request $request)
     {
         $user = Auth::user();
-        
-        $log = new log();
-        $log->user_id = auth()->user()->id;
-        $log->activity = 'Sent a message in a system';
-        $log->save();
 
         $message = $user->messages()->create([
             'message' => $request->input('message')
         ]);
-
-
 
         broadcast(new MessageSent($user, $message))->toOthers();
 
