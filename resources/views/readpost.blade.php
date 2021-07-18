@@ -4,7 +4,6 @@
 <div class="az-content pd-y-20 pd-lg-y-30 pd-xl-y-40">
     <div class="container" style="margin-top: 3rem;">
         <div class="az-content-left az-content-left-profile">
-
             <div class="az-profile-overview">
                 <div class="az-img-user">
                 </div><!-- az-img-user -->
@@ -26,44 +25,25 @@
                 <hr class="mg-y-30">
 
             </div><!-- az-profile-overview -->
-
         </div><!-- az-content-left -->
+
         <div class="az-content-body az-content-body-profile">
             <nav class="nav az-nav-line">
-                <a href="#" class="nav-link active" data-toggle="tab">Farms</a>
 
+                    <h2 class="card-title">{{$datas->project_title}}</h2>
             </nav>
 
             <div class="az-profile-body">
-                <div class="row project-list-showcase">
-@foreach ($projects as $item)
-
-
-
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-12 project-grid">
-                        <div class="project-grid-inner">
-                            <div class="d-flex align-items-start">
-                                <div class="wrapper">
-                                    <h5 class="project-title">{{$item->project_title}}</h5>
-                                    <p class="project-location">{{$item->location}}</p>
-                                </div>
-                            </div>
-                            <p class="project-description">{{$item->project_description}}.</p>
-
-
-                            <p>By: <small>{{$item['user']->name}}</small> </p>
-
-                            <div class="d-flex justify-content-between flex-wrap align-items-center">
-                                <div class="action-tags d-flex flex-row">
-                                    <a href="{{route('readpost',$item->id)}}" class="wrapper pr-4"><i class="mdi mdi-view-sequential mr-2"></i>Read</a>
-                                </div>
-                            </div>
-                        </div>
+                <div class="card" style="margin: auto; width: 50%;">
+                    <img class="card-img-top" src="{{asset('posts/')}}@php echo '/'.$datas->user_id.'/'.$datas->image; @endphp" alt="Card image cap" style="width:100%;margin: auto;">
+                    <div class="card-body">
+                        <p class="card-text">{{$datas->project_description}}.</p>
                     </div>
-                    @endforeach
-                </div><!-- az-profile-body -->
+                </div>
             </div><!-- az-content-body -->
         </div><!-- container -->
-    </div><!-- az-content -->
 
-   @endsection
+    </div><!-- az-content -->
+</div>
+@endsection
+

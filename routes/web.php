@@ -22,3 +22,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('finalize','HomeController@finalize')->name('finalize')->middleware('auth');
+
+Route::get('newpost','HomeController@newpost')->name('newpost')->middleware('auth');
+Route::POST('savepost','HomeController@savepost')->name('savepost')->middleware('auth');
+
+Route::get('readpost/{id}','HomeController@readpost')->name('readpost')->middleware('auth');
